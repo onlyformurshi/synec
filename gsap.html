@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scroll Example with Locomotive Scroll</title>
+    <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            
+        }
+        .container {
+            position: relative;
+            height: 2000px; /* Ensures there's enough content to scroll */
+            background: linear-gradient(to bottom, #00f, #f00); /* Gradient for visual effect */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" data-scroll-container>
+        <h1 data-scroll data-scroll-speed="2">Scrollcxxc Down</h1>
+    </div>
+
+    <script src="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+    <script>
+        // Initialize Locomotive Scroll
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'), // Target the scroll container
+            smooth: true // Enable smooth scrolling
+        });
+
+        // Log the instance to verify it's working
+        console.log(scroll);
+    </script>
+</body>
+</html>
